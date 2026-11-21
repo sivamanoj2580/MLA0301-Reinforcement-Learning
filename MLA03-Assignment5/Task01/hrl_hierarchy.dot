@@ -1,0 +1,6 @@
+digraph G { rankdir=TB; node [shape=box,style="rounded,filled",fillcolor="#EAF2FB",fontname="Helvetica",fontsize=11]; edge [fontname="Helvetica",fontsize=9];
+R[label="MAIN TASK: Earthquake Rescue Mission",fillcolor="#FDE9D9"];
+E[label="Explore Area"];L[label="Identify / Locate Victim"];S[label="Rescue Assistance\n(deliver supplies)"];B[label="Return to Base"];
+R->E;R->L;R->S;R->B;
+P[label="Primitive actions: UP, DOWN, LEFT, RIGHT, SCAN, RESCUE, DELIVER",fillcolor="#E2F0D9"];
+E->P;L->P;S->P;B->P;}

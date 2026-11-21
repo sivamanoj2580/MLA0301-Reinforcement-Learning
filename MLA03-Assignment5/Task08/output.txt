@@ -1,0 +1,12 @@
+Initial parameter: 2.0
+Adapted parameter: 3.5
+
+Environment configurations:
+  earthquake: {'obstacles': 'collapsed buildings, blocked paths', 'hazard': 'low', 'need': 'obstacle avoidance, victim ID'}
+  flood: {'obstacles': 'waterlogged roads', 'hazard': 'medium', 'need': 'safe routes, water level'}
+  forest_fire: {'obstacles': 'fire zones', 'hazard': 'high, changing', 'need': 'hazard avoidance, emergency navigation'}
+
+Method | Initial error | Adaptation episodes | Final error
+Scratch | 8.396 | 13 | 0.081
+Transfer (earthquake) | 2.345 | 9 | 0.095
+Meta-learning (MAML) | 1.507 | 8 | 0.087

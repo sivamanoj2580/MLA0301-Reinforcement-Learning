@@ -1,0 +1,7 @@
+digraph G { rankdir=TB; node [shape=box,style="rounded,filled",fillcolor="#EAF2FB",fontname="Helvetica",fontsize=11]; edge [fontname="Helvetica",fontsize=9];
+CC[label="Control centre / Centralised critic (training only)\nR_team = R_rescue − λ1 C_collision − λ2 C_resource − λ3 C_delay",fillcolor="#FDE9D9"];
+D[label="Drone\nactor"];G1[label="Ground robot\nactor"];M[label="Medical robot\nactor"];K[label="Comm robot\nactor"];
+ENV[label="Disaster environment",fillcolor="#E2F0D9"];
+CC->D[style=dashed];CC->G1[style=dashed];CC->M[style=dashed];CC->K[style=dashed];
+D->ENV;G1->ENV;M->ENV;K->ENV;
+K->D[label="relay"];K->G1[label="relay"];K->M[label="relay"];D->K[label="victim reports"];}

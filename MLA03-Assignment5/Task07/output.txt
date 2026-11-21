@@ -1,0 +1,30 @@
+Task hierarchy:
+- FLOOD_RESCUE (composite)
+  - NAVIGATION (composite)
+    - MOVE (primitive)
+    - AVOID_WATER (primitive)
+  - VICTIM_DETECTION (composite)
+    - SCAN (primitive)
+    - IDENTIFY (primitive)
+  - MEDICAL_ASSISTANCE (composite)
+    - DELIVER_SUPPLY (primitive)
+    - CONFIRM_RESCUE (primitive)
+  - RETURN_TO_BASE (composite)
+
+Composite tasks: ['FLOOD_RESCUE', 'NAVIGATION', 'VICTIM_DETECTION', 'MEDICAL_ASSISTANCE', 'RETURN_TO_BASE']
+Primitive actions: ['AVOID_WATER', 'CONFIRM_RESCUE', 'DELIVER_SUPPLY', 'IDENTIFY', 'MOVE', 'SCAN']
+
+MAXQ values  Q(i,s,a) = V(a,s) + C(i,s,a)
+Navigation : 8
+Victim Detection : 12
+Medical Assistance : 16
+Preferred subtask: Medical Assistance
+
+Dependency check (MEDICAL_ASSISTANCE):
+  completed=[] -> can start: False
+  completed=['NAVIGATION'] -> can start: False
+  completed=['NAVIGATION', 'VICTIM_DETECTION'] -> can start: True
+
+Memory (illustrative S=1000, A=6, K=4 subtasks):
+  Flat Q-table entries   : S*A       = 6000
+  MAXQ V+C entries (<=)  : K*S*A     = 24000 (but with state abstraction per subtask it shrinks)

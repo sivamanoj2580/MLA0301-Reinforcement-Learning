@@ -1,0 +1,23 @@
+Updated belief: [0.8, 0.2]
+
+Sequential belief update (repeated observations favouring s1):
+  after observation 1: [0.8, 0.2]
+  after observation 2: [0.914, 0.086]
+  after observation 3: [0.966, 0.034]
+
+Ethical decisions:
+  Case 1: SUPPLY to victim V1 (higher severity); log reason
+  Case 2: TAKE safer route
+  Case 3: MASK/DISCARD personal data; store only victim location
+  Case 4: INITIATE rescue (belief >= 0.8) with operator notification
+Ethical compliance (scenarios handled by a rule gate):  100.0 %
+
+Integrated evaluation
+Metric | Independent | Cooperative+HRL system
+Rescue success (%) | - | 100.0
+Avg response time (rounds) | 2.8 | 1.0
+Team reward | -13.2 | 39.0
+Collision rate | 0.643 | 0.0
+Ethical compliance (%) | n/a | 100.0
+
+MDP vs POMDP: MDP policy table over states = 25 | POMDP belief vector size = 25 (continuous simplex), observation model entries = 100

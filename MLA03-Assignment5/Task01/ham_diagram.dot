@@ -1,0 +1,4 @@
+digraph G { rankdir=TB; node [shape=box,style="rounded,filled",fillcolor="#EAF2FB",fontname="Helvetica",fontsize=11]; edge [fontname="Helvetica",fontsize=9];
+EX[label="EXPLORE\n(move, scan)"];ID[label="IDENTIFY VICTIM\n(scan, confirm)"];RS[label="RESCUE ASSIST\n(move, rescue, deliver)"];RB[label="RETURN BASE\n(move)"];EM[label="EMERGENCY / AVOID\n(retreat, wait, call help)",fillcolor="#F8D7DA"];
+EX->ID[label="victim signal"];ID->RS[label="victim confirmed"];RS->RB[label="rescued"];ID->EX[label="false alarm"];
+EX->EM[label="hazard / blocked"];ID->EM[label="hazard"];RS->EM[label="hazard"];EM->EX[label="path safe"];EM->RB[label="battery low"];}

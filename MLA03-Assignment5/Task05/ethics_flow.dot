@@ -1,0 +1,7 @@
+digraph G { rankdir=TB; node [shape=box,style="rounded,filled",fillcolor="#EAF2FB",fontname="Helvetica",fontsize=11]; edge [fontname="Helvetica",fontsize=9];
+S[label="Observation → belief update b'(s')"];
+Q1[label="Safety risk acceptable?"];
+Q2[label="Belief ≥ 0.8?"];Q3[label="Resources scarce?"];Q4[label="Personal data captured?"];
+H[label="Human supervisor review",fillcolor="#F8D7DA"];A[label="Execute action + log reason",fillcolor="#E2F0D9"];
+S->Q1;Q1->H[label="no"];Q1->Q2[label="yes"];Q2->H[label="no (0.4–0.8: ask more info)"];Q2->Q3[label="yes"];
+Q3->A[label="no"];Q3->H[label="tie in severity"];Q3->Q4[label="triage by severity"];Q4->A[label="mask/discard"];}

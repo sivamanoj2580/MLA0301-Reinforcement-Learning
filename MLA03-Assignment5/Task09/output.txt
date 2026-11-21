@@ -1,0 +1,8 @@
+Team reward: 50
+
+Metric (greedy evaluation, 5 seeds x 100 episodes)
+Method | Victims rescued | Completion time (rounds) | Collision rate | Wasted resources | Team reward
+Independent (selfish reward) | 4.0 2.8 0.643 7.2 -13.2
+Cooperative (team reward) | 4.0 1.0 0.0 0.0 39.0
+
+Complexity: IQL table entries = 256 | joint-action (centralised) table entries = 4096

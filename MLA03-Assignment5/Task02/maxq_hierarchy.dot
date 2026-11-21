@@ -1,0 +1,7 @@
+digraph G { rankdir=TB; node [shape=box,style="rounded,filled",fillcolor="#EAF2FB",fontname="Helvetica",fontsize=11]; edge [fontname="Helvetica",fontsize=9];
+R[label="ROOT: Complete Disaster Rescue",fillcolor="#FDE9D9"];
+N[label="Navigation\n(reach area)"];D[label="Detection\n(identify victims)"];SF[label="Safety\n(avoid danger)"];A[label="Assistance\n(deliver supplies)"];C[label="Completion\n(return to base)"];
+R->N;R->D;R->SF;R->A;R->C;
+N->MOVE;N->AVOID_WATER;D->SCAN;D->IDENTIFY;A->DELIVER_SUPPLY;A->CONFIRM_RESCUE;SF->AVOID_WATER;C->MOVE;
+node[fillcolor="#E2F0D9"];MOVE;AVOID_WATER;SCAN;IDENTIFY;DELIVER_SUPPLY;CONFIRM_RESCUE;
+A->D[style=dashed,label="needs"];A->N[style=dashed,label="needs"];}

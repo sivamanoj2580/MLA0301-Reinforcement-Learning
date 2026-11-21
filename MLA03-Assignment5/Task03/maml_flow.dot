@@ -1,0 +1,7 @@
+digraph G { rankdir=TB; node [shape=box,style="rounded,filled",fillcolor="#EAF2FB",fontname="Helvetica",fontsize=11]; edge [fontname="Helvetica",fontsize=9];
+T[label="Task distribution: earthquake, flood, forest fire"];
+I[label="Initial meta-parameters θ"];
+IN[label="Inner loop (per task i)\nθ'_i = θ − α ∇θ L_i(θ)"];
+O[label="Outer loop\nθ ← θ − β ∇θ Σ L_i(θ'_i)"];
+N[label="New disaster: few episodes of inner-loop update from θ",fillcolor="#E2F0D9"];
+T->I;I->IN;IN->O;O->I[label="repeat"];O->N[label="meta-trained θ*"];}
